@@ -8,13 +8,13 @@
 
 function __autoload($class_name) {
   $filename = strtolower($class_name) . '.php';
-  $file = site_path . 'classes' . DIRSEP . $filename;
+  $file = SITE_PATH . 'classes' . DIRSEP . $filename;
 
-  if (file_exists($file) == false) {
+  if (file_exists($file) === false) {
     return false;
   }
 
-  include ($file);
+  require_once($file);
 }
 
 $registry = new Registry;
