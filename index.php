@@ -1,25 +1,18 @@
 <?php
-  error_reporting (E_ALL);
-  if (version_compare(phpversion(), '5.1.0', '<') == true) { die ('PHP5.1 Only'); }
+error_reporting (E_ALL);
+if (version_compare(phpversion(), '5.1.0', '<') == true) { die ('PHP5.1 Only'); }
+define ('DIRSEP', DIRECTORY_SEPARATOR);
+$site_path = realpath(dirname(__FILE__) . DIRSEP . '..' . DIRSEP) . DIRSEP;
+define ('site_path', $site_path);
 
-  // Константы:
+$db = new PDO('mysql:host=localhost;dbname=gis', 'gisdb', 'gisadminpass');
+$registry->set ('db', $db);
 
-  define ('DIRSEP', DIRECTORY_SEPARATOR);
+$template = new Template($registry);
+$registry->set ('template', $template);
 
-  // Узнаём путь до файлов сайта
-  $site_path = realpath(dirname(__FILE__) . DIRSEP . '..' . DIRSEP) . DIRSEP;
-  define ('site_path', $site_path);
+$router = new Router($registry);
+$registry->set ('router', $router);
 
-  $db = new PDO('mysql:host=localhost;dbname=gis', 'root', 'Zerg1979');
-  $registry->set ('db', $db);
-
-  $router = new Router($registry);
-  $registry->set ('router', $router);
-
-  $router->setPath (site_path . 'controllers');
-
-  $template = new Template($registry);
-
-  $registry->set ('template', $template);
-
-  $router->delegate();
+$router->setPath (site_path . 'controllers');
+$router->delegate();
