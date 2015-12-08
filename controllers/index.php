@@ -10,8 +10,11 @@ Class Controller_Index Extends Controller_Base {
 
 
   function index() {
+    global $registry;
+    $smarty = $registry->get("smarty");
 
-    echo 'Hello from my MVC system';
+    $smarty->assign('test', 'Zerg Solution');
+    $smarty->display(TMPL_PATH . "index.html");
 
   }
 
