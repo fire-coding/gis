@@ -6,7 +6,7 @@
 </form>
 {else}
 <form action="/user/logout" method="POST">
-  <div class="user_info">{$user->displayname}</div>
+  <div class="user_info">{$user->display_name}</div>
   <button type="submit">Вихід</button>
 </form>
 {/if}

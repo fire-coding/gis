@@ -18,6 +18,13 @@ define ('DB_NAME', 'gis');
 define ('DB_USER', 'gisdb');
 define ('DB_PASS', 'gisadminpass');
 
+// AUTHENICATION MODES
+define('AUTH_DB', 1);   // Аутентификация только MySQL
+define('AUTH_ADDB', 2); // Аутентификация Active Directory + MySQL
+
+// CURRENT AUTH MODE
+define('AUTH_MODE', AUTH_ADDB);
+
 // ACTIVE DIRECTORY NTLM AUTHENICATION
 define ('AD_DOMAIN_CONTROLLER', '31.131.17.195');
 define ('AD_ACCOUNT_SUFIX', "@test.local");

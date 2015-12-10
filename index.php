@@ -21,8 +21,9 @@ $router = new Router($registry);
 $registry->set ('router', $router);
 
 if(isset($_SESSION['user'])) {
-  $registry->set('user', $_SESSION['user']);
-  print_r($_SESSION['user']);
+  $user = new User();
+  $user->fromArray($_SESSION['user']);
+  $registry->set('user', $user);
 }
 
 $router->setPath (SITE_PATH . 'controllers');

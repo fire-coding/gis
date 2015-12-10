@@ -92,4 +92,6 @@ a, a:visited {
   float: left;
   margin-right: 10px;
   color: #0f2d59;
+  font-size: 16px;
+  line-height: 30px;
 }

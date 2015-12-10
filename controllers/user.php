@@ -23,7 +23,8 @@ Class Controller_User Extends Controller_Base {
 
     $login = !is_null(Http::post("login")) ? Http::post("login") : "";
     $password = !is_null(Http::post("password")) ? Http::post("password") : "";
-    if($login !="" && $password != "" && is_null($user)) {
+
+    if($login != "" && $password != "" && is_null($user)) {
       try {
         $adldap = new adLDAP();
       }
@@ -36,7 +37,8 @@ Class Controller_User Extends Controller_Base {
         $user = new User();
         $user->login = $login;
         $user->password = $password;
-        $user->displayname = $user_info[0]['displayname'][0];
+        $user->display_name = $user_info[0]['displayname'][0];
+        $user->group_name = "";
         $user->setCurrent();
       } else {
         $smarty->assign('login_err', 'Невірний логін або пароль');
