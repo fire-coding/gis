@@ -8,12 +8,16 @@
 
 Class User {
 
-  public $logged = false;
+  public $login;
 
-  public function auth($login, $password) {
-    //TODO: NTLM and Internal Auth
+  public $password;
+
+  public $displayname;
+
+  public function setCurrent() {
+    global $registry;
+    $registry->set('user', $this);
+    $_SESSION['user'] = $this;
   }
-
-
 
 }

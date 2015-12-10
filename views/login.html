@@ -1,5 +1,15 @@
-<form action="user/auth" method="POST">
-  <input name="login" type="text" value="" placeholder="Логін" />
-  <input name="login" type="text" value="" placeholder="Пароль" />
+{if $user == null}
+<form action="/user/auth" method="POST">
+  <input name="login" type="text" value="{$login}" placeholder="Логін" />
+  <input name="password" type="password" value="{$password}" placeholder="Пароль" />
   <button type="submit">Вхід</button>
 </form>
+{else}
+<form action="/user/logout" method="POST">
+  <div class="user_info">{$user->displayname}</div>
+  <button type="submit">Вихід</button>
+</form>
+{/if}
+{if $login_err && $login_err != ""}
+<br><span class="login_err">{$login_err}</span>
+{/if}

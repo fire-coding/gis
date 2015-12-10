@@ -82,3 +82,14 @@ a, a:visited {
   float: right;
   padding: 20px;
 }
+
+.login_err {
+  color: #b70308;
+  line-height: 25px;
+}
+
+.user_info {
+  float: left;
+  margin-right: 10px;
+  color: #0f2d59;
+}
