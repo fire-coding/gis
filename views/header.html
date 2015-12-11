@@ -2,15 +2,25 @@
   <a href="/"><img src="/images/logo.png" /></a>
 </div>
 
+{if $user->is_admin === true}
 <div class="main-menu">
   <ul>
     <li class="active"><a href="/">Головна</a></li>
-    <li><a href="#">Новини</a></li>
-    <li><a href="#">Запитання</a></li>
-    <li><a href="#">Сервіси</a></li>
-    <li><a href="#">Про нас</a></li>
+    <li><a href="/">Система</a></li>
+    <li><a href="/admin_users">Користувачі</a></li>
   </ul>
 </div>
+{else}
+<div class="main-menu">
+  <ul>
+    <li class="active"><a href="/">Головна</a></li>
+    <li><a href="/news">Новини</a></li>
+    <li><a href="/questions">Запитання</a></li>
+    <li><a href="/services">Сервіси</a></li>
+    <li><a href="/about">Про нас</a></li>
+  </ul>
+</div>
+{/if}
 
 <div class="login">
   {include file="login.html"}

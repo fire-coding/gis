@@ -27,4 +27,14 @@ if(isset($_SESSION['user'])) {
 }
 
 $router->setPath (SITE_PATH . 'controllers');
+$router->getController($file, $controller, $action, $args);
+$registry->set("controller", array(
+  "file" => $file,
+  "controller" => $controller,
+  "action" => $action,
+  "args" => $args
+));
+
+$smarty->assign("controller", $registry->get("controller"));
+
 $router->delegate();

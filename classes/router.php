@@ -28,6 +28,10 @@ Class Router {
     $this->path = $path;
   }
 
+  function getPath() {
+    return $this->getPath();
+  }
+
   function delegate()
   {
     $this->getController($file, $controller, $action, $args);
@@ -44,7 +48,7 @@ Class Router {
     $controller->$action();
   }
 
-  private function getController(&$file, &$controller, &$action, &$args) {
+  public function getController(&$file, &$controller, &$action, &$args) {
     $route = (empty($_GET['route'])) ? '' : $_GET['route'];
     if (empty($route)) { $route = 'index'; }
     $route = trim($route, '/\\');
