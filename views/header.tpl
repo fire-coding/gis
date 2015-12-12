@@ -3,13 +3,13 @@
 </div>
 
 {if $user->is_admin === true}
-<div class="main-menu">
+<!--div class="main-menu">
   <ul>
     <li class="active"><a href="/">Головна</a></li>
     <li><a href="/">Система</a></li>
     <li><a href="/admin_users">Користувачі</a></li>
   </ul>
-</div>
+</div-->
 {else}
 <div class="main-menu">
   <ul>
@@ -22,6 +22,4 @@
 </div>
 {/if}
 
-<div class="login">
-  {include file="login.html"}
-</div>
+{include file="login.tpl"}

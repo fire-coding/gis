@@ -1,0 +1,30 @@
+<settings>
+
+  <!-- Database settings  -->
+  <database>
+    <host>localhost1</host>
+    <name>poligons</name>
+    <user>poligons</user>
+    <pass>poligons</pass>
+  </database>
+
+  <database_external>
+    <host></host>
+    <name></name>
+    <user></user>
+    <pass></pass>
+  </database_external>
+
+  <!-- Authentication mode -->
+  <auth>
+    <mode>1</mode>
+  </auth>
+
+  <!-- Domain name server -->
+  <ad_server>
+    <address>31.131.17.195</address>
+    <account_sufix>@test.local</account_sufix>
+    <base_dn>DC=test,DC=local</base_dn>
+  </ad_server>
+
+</settings>

@@ -1,21 +1,30 @@
 <?php
 session_start();
 
-require "config.php";
+// PATH
+define ('DIRSEP', DIRECTORY_SEPARATOR);
+define ('SITE_PATH', realpath(dirname(__FILE__)) . DIRSEP);
+define ('MODELS_PATH', SITE_PATH . "models" . DIRSEP);
+define ('MODULES_PATH', SITE_PATH . "modules" . DIRSEP);
+define ('TMPL_PATH', SITE_PATH . "views" . DIRSEP);
 require SITE_PATH . "includes/startup.php";
-require SITE_PATH . "ldap/adLDAP.php";
-require SITE_PATH . 'smarty/Smarty.class.php';
 
 $smarty = new Smarty;
 $smarty->compile_check = true;
 $smarty->debugging = false;
 $registry->set ('smarty', $smarty);
 
-$db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
-$registry->set ('db', $db);
-
 $template = new Template($registry);
 $registry->set ('template', $template);
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+try {
+  $db_link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+  mysqli_set_charset($db_link, "UTF8");
+  $registry->set('dl', $db_link);
+} catch (Exception $ex) {
+  $registry->set('dl', null);
+}
 
 $router = new Router($registry);
 $registry->set ('router', $router);

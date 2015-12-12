@@ -34,7 +34,26 @@ Class User {
   }
 
   public function authDB() {
-    //TODO: DB Auth
+    $user_model = DB::loadModel("users/user");
+
+    if(AUTH_MODE == AUTH_ADDB) {
+      $user_row = $user_model->getByLogin($this->login);
+      if(is_null($user_row) && $this->logged === true) {
+        $user_model->add(array(
+          "login" => $this->login,
+          "password" => $this->password,
+          "is_admin" => $this->is_admin === true ? 1 : 0,
+          "display_name" => $this->display_name
+        ));
+      }
+    } elseif(AUTH_MODE == AUTH_DB && $this->login != "" && $this->password != "") {
+      $user_row = $user_model->getByLogin($this->login);
+      if(md5($this->password) == $user_row["pass"]) {
+        $this->is_admin = $user_row["su"] == 1;
+        $this->display_name = $user_row["display_name"];
+        $this->logged = true;
+      }
+    }
   }
 
   public function authADDB() {
