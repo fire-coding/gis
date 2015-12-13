@@ -17,7 +17,6 @@ Class Controller_Index Extends Controller_Base {
       $this->registerModule("admin/common/panel", "center_side");
     }
 
-    $smarty->assign('user', $user);
     $smarty->assign('page', 'index');
 
     $this->display();

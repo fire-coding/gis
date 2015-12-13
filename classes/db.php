@@ -8,6 +8,12 @@
 
 Class DB {
 
+  public function last_id() {
+    global $registry;
+    $link = $registry->get("dl");
+    return mysqli_insert_id($link);
+  }
+
   public function getRow($sql) {
     global $registry;
     $link = $registry->get("dl");
@@ -25,6 +31,21 @@ Class DB {
       $rows[] = $row;
     }
     return $rows;
+  }
+
+  public function insert($sql) {
+    global $registry;
+    $link = $registry->get("dl");
+    $res = mysqli_query($link, $sql);
+    mysqli_stmt_execute($res);
+    return $this->last_id();
+  }
+
+  public function execute($sql) {
+    global $registry;
+    $link = $registry->get("dl");
+    $res = mysqli_query($link, $sql);
+    mysqli_stmt_execute($res);
   }
 
   public static function loadModel($model) {

@@ -17,7 +17,6 @@ Class Controller_System Extends Controller_Base
       $this->registerModule("admin/system/system", "center_side");
     }
 
-    $smarty->assign('user', $user);
     $smarty->assign('page', 'system');
 
     $this->display();

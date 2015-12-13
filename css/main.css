@@ -32,6 +32,14 @@ input, select {
   border-radius: 5px;
 }
 
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -264,19 +272,24 @@ a:hover {
   display: flex;
 }
 
-.system.module .var_name {
+.module .var_name {
   width: 300px;
 }
 
-.system.module input {
+.module input {
   width: 200px;
 }
 
-.system.module select {
+.module input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.module select {
   width: 212px;
 }
 
-.system.module .fields_group {
+.module .fields_group {
   font-size: 18px;
   font-weight: bold;
   line-height: 30px;
@@ -296,11 +309,27 @@ a:hover {
   padding: 5px;
 }
 
+.users.module table td a {
+  color: #1556d8;
+}
+
 .buttons-wrapper {
   height: 40px;
 }
 
-.buttons-wrapper button {
+.buttons-wrapper button, .buttons-wrapper a {
   margin-right: 10px;
   margin-top: 10px;
+}
+
+a.btn {
+  padding: 5px 10px;
+  border: 1px solid #1F5B9E;
+  float: left;
+  background-color: #428CCE;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 15px;
 }

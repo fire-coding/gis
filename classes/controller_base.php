@@ -30,8 +30,8 @@ Abstract Class Controller_Base {
     $smarty->assign('left_side', $this->renderModules("left_side"));
     $smarty->assign('right_side', $this->renderModules("right_side"));
     $smarty->assign('center_side', $this->renderModules("center_side"));
+    $smarty->assign('user', $this->registry->get('user'));
 
-    $smarty = $this->registry->get("smarty");
     $smarty->display(TMPL_PATH . "index.tpl");
   }
 

@@ -4,6 +4,9 @@
     {include file="head.tpl"}
   </head>
   <body>
+
+    {include file="zwindow.tpl"}
+
     <div class="content-wrapper">
 
       <!--HEADER -->

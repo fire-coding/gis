@@ -7,9 +7,9 @@
       <li>
         <span class="fa fa-hand-o-right">&nbsp;</span><span>Користувачі</span>
         <ul>
-          <li><a href="/users"><span class="fa fa-caret-right">&nbsp;</span>Користувачі</a></li>
-          <li><a href="/user_groups"><span class="fa fa-caret-right">&nbsp;</span>Групи користувачів</a></li>
-          <li><a href="/objects"><span class="fa fa-caret-right">&nbsp;</span>Об`єкти</a></li>
+          <li {if $page == "users"} class="active" {/if}><a href="/users"><span class="fa fa-caret-right">&nbsp;</span>Користувачі</a></li>
+          <li {if $page == "user_groups"} class="active" {/if}><a href="/user_groups"><span class="fa fa-caret-right">&nbsp;</span>Групи користувачів</a></li>
+          <li {if $page == "objects"} class="active" {/if}><a href="/objects"><span class="fa fa-caret-right">&nbsp;</span>Об`єкти</a></li>
         </ul>
       </li>
     </ul>

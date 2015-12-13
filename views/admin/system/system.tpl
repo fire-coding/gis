@@ -70,7 +70,7 @@
           <td><input type="text" name="ad_server[base_dn]" value="{$ad_server_base_dn}" /></td>
         </tr>
         <tr>
-          <td colspan="2"><button type="submit">Зберегти</button></td>
+          <td colspan="2"><button type="submit">{fa_icon name="save"}Зберегти</button></td>
         </tr>
       </table>
     </form>
