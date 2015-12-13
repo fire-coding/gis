@@ -2,16 +2,16 @@
   <div class="module-title gradient">Адміністрування</div>
   <div class="module-wrapper">
     <ul>
-      <li {if $page == "index"} class="active" {/if}><a href="/"><span class="fa fa-hand-o-right">&nbsp;</span>Панель керування</a></li>
-      <li {if $page == "system"} class="active" {/if}><a href="/system"><span class="fa fa-hand-o-right">&nbsp;</span>Система</a></li>
+      <li {if $page == "index"} class="active" {/if}><a href="/">{fa_icon name="hand-o-right"}Панель керування</a></li>
+      <li {if $page == "system"} class="active" {/if}><a href="/system">{fa_icon name="hand-o-right"}Система</a></li>
       <li>
-        <span class="fa fa-hand-o-right">&nbsp;</span><span>Користувачі</span>
+        {fa_icon name="hand-o-right"}<span>Користувачі</span>
         <ul>
-          <li {if $page == "users"} class="active" {/if}><a href="/users"><span class="fa fa-caret-right">&nbsp;</span>Користувачі</a></li>
-          <li {if $page == "user_groups"} class="active" {/if}><a href="/user_groups"><span class="fa fa-caret-right">&nbsp;</span>Групи користувачів</a></li>
-          <li {if $page == "objects"} class="active" {/if}><a href="/objects"><span class="fa fa-caret-right">&nbsp;</span>Об`єкти</a></li>
+          <li {if $page == "users"} class="active" {/if}><a href="/users">{fa_icon name="caret-right"}Користувачі</a></li>
+          <li {if $page == "user_groups"} class="active" {/if}><a href="/user_groups">{fa_icon name="caret-right"}Групи користувачів</a></li>
         </ul>
       </li>
+      <li {if $page == "import"} class="active" {/if}><a href="/import">{fa_icon name="hand-o-right"}Імпорт</a></li>
     </ul>
   </div>
 </div>

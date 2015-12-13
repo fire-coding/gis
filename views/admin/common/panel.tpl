@@ -22,11 +22,12 @@
       </div>
     </a>
 
-    <a href="/objects">
+    <a href="/import">
       <div class="icon-wrapper">
-        <img src="/images/icons/objects.png" />
-        <span>Об`єкти</span>
+        <img src="/images/icons/import-export.png" />
+        <span>Імпорт об`єктів<br>із зовнішньої БД</span>
       </div>
     </a>
+
   </div>
 </div>

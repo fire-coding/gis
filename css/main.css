@@ -26,7 +26,7 @@ body {
   color: #fff;
 }
 
-input, select {
+input, select, textarea {
   padding: 5px;
   border: 1px solid #1F5B9E;
   border-radius: 5px;
@@ -256,7 +256,7 @@ a:hover {
 }
 
 .panel.module .icon-wrapper {
-  width: 80px;
+  width: 100px;
   float: left;
   margin-right: 30px;
   text-align: center;
@@ -287,6 +287,11 @@ a:hover {
 
 .module select {
   width: 212px;
+}
+
+.module textarea {
+  width: 250px;
+  height: 100px;
 }
 
 .module .fields_group {
@@ -332,4 +337,5 @@ a.btn {
   border-radius: 5px;
   font-size: 13px;
   line-height: 15px;
+  margin-right: 10px;
 }

@@ -41,10 +41,13 @@ Class Controller_Users extends Controller_Base
     $user = Http::post("user");
     $user["is_admin"] = $user["is_admin"] == "on" ? 1: 0;
     $groups = Http::post("groups");
+    $groups_ids = array();
+    foreach($groups as $id => $group) $groups_ids[] = $id;
+
     $user_model = DB::loadModel("users/user");
     $user_groups_model = DB::loadModel("users/groups");
     $user_data = $user_model->add($user);
-    $user_groups_model->setGroups($user_data["id"], $groups);
+    $user_groups_model->setGroups($user_data["id"], $groups_ids);
 
     Http::redirect("/users");
   }
@@ -57,6 +60,36 @@ Class Controller_Users extends Controller_Base
     }
 
     Http::redirect("/users");
+  }
+
+  public function update() {
+    $user = Http::post("user");
+    $user_id = Http::post("user_id");
+    $user["is_admin"] = $user["is_admin"] == "on" ? 1: 0;
+    $groups = Http::post("groups");
+    $groups_ids = array();
+    foreach($groups as $id => $group) $groups_ids[] = $id;
+
+    $user_model = DB::loadModel("users/user");
+    $user_groups_model = DB::loadModel("users/groups");
+    $user_model->update($user_id, $user);
+    $user_groups_model->setGroups($user_id, $groups_ids);
+
+    Http::redirect("/users");
+  }
+
+  public function edit() {
+    $user = $this->registry->get("user");
+
+    if($user->is_admin === true) {
+      $this->registerModule("admin/common/menu", "left_side");
+      $this->registerModule("admin/users/user_edit", "center_side");
+    }
+
+    $smarty = $this->registry->get("smarty");
+    $smarty->assign('page', 'users');
+
+    $this->display();
   }
 
 }

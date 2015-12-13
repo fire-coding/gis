@@ -39,7 +39,10 @@
         {/foreach}
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td colspan="2"><button type="submit">{fa_icon name="save"}Зберегти</button></td>
+          <td colspan="2">
+            <a href="/users" class="btn">{fa_icon name="arrow-circle-left"}Відміна</a>
+            <button type="submit">{fa_icon name="save"}Зберегти</button>
+          </td>
         </tr>
       </table>
     </form>

@@ -25,17 +25,17 @@ var App = function() {
       text: text,
       buttons: [
         {
-          text: "Так",
-          click: function() {
-            wnd.hide();
-            if(typeof(callback) != 'undefined') callback(true);
-          }
-        },
-        {
           text: "Ні",
           click: function() {
             if(typeof(callback) != 'undefined') callback(false);
             wnd.hide();
+          }
+        },
+        {
+          text: "Так",
+          click: function() {
+            wnd.hide();
+            if(typeof(callback) != 'undefined') callback(true);
           }
         }
       ]
@@ -55,6 +55,14 @@ var App = function() {
     this.confirm("Ви впевненні що хочете видалити вибраних користувачів ?", function(res) {
       if(res === true) {
         $("#users_delete_form").submit();
+      }
+    });
+  }
+
+  this.deleteGroups = function() {
+    this.confirm("Ви впевненні що хочете видалити вибрані групи користувачів ?", function(res) {
+      if(res === true) {
+        $("#groups_delete_form").submit();
       }
     });
   }
@@ -83,7 +91,61 @@ var App = function() {
     } else return true;
   }
 
+  this.checkEditUser = function() {
+    var name = $("#user_name").val();
+    var display_name = $("#user_display_name").val();
+    var email = $("#user_email").val();
+    var pass = $("#user_pass").val();
+    var pass_confirm = $("#user_pass_confirm").val();
+    var msg = [];
+    if(name == "") msg.push("Введіть логін користувача");
+    if(display_name == "") msg.push("Введіть ім`я користувача");
+    if(email == "") msg.push("Введіть email користувача");
+    if(pass != "" || pass_confirm != "") {
+      if(pass != pass_confirm) msg.push("Не співпадають введені паролі");
+    }
 
+    if(msg.length > 0) {
+      var msgstr = "При перевірці введених даних виникли наступні помилки:<br>";
+      $.each(msg, function(index, error) {
+        msgstr += error + "<br>";
+      });
+      app.alert(msgstr);
+      return false;
+    } else return true;
+  }
+
+  this.checkAddGroup = function() {
+    var name = $('#group_name').val();
+    var description = $('#group_description').val();
+    var msg = [];
+    if(name == "") msg.push("Введіть назву групи");
+    if(description == "") msg.push("Введіть пояснення для групи");
+    if(msg.length > 0) {
+      var msgstr = "При перевірці введених даних виникли наступні помилки:<br>";
+      $.each(msg, function(index, error) {
+        msgstr += error + "<br>";
+      });
+      app.alert(msgstr);
+      return false;
+    } else return true;
+  }
+
+  this.checkEditGroup = function() {
+    var name = $('#group_name').val();
+    var description = $('#group_description').val();
+    var msg = [];
+    if(name == "") msg.push("Введіть назву групи");
+    if(description == "") msg.push("Введіть пояснення для групи");
+    if(msg.length > 0) {
+      var msgstr = "При перевірці введених даних виникли наступні помилки:<br>";
+      $.each(msg, function(index, error) {
+        msgstr += error + "<br>";
+      });
+      app.alert(msgstr);
+      return false;
+    } else return true;
+  }
 }
 
 var app = new App();
