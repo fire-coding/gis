@@ -17,6 +17,11 @@ Class Controller_Index Extends Controller_Base {
       $this->registerModule("admin/common/panel", "center_side");
     }
 
+    if(is_null($user) || ($user->is_admin === false && $user->logged === false)) {
+      $this->registerModule("client/users/login_window", "center_side");
+      $smarty->assign('start_page', 1);
+    }
+
     $smarty->assign('page', 'index');
 
     $this->display();

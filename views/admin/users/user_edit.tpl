@@ -40,7 +40,7 @@
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td colspan="2">
-            <a href="/users" class="btn">{fa_icon name="arrow-circle-left"}Відміна</a>
+            <button onclick="document.location.href='/users'">{fa_icon name="arrow-circle-left"}Відміна</button>
             <button type="submit">{fa_icon name="save"}Зберегти</button>
           </td>
         </tr>

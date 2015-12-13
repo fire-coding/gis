@@ -14,7 +14,7 @@
         {include file="header.tpl"}
       </div>
 
-      <div class="main-content">
+      <div class="main-content {if $start_page == 1} start-page {/if}">
         <table>
           <tr>
             <!-- LEFT SIDE -->

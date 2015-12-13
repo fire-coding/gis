@@ -25,7 +25,7 @@
         {/foreach}
         <tr>
           <td colspan="2">
-            <a href="/user_groups" class="btn">{fa_icon name="arrow-circle-left"}Відміна</a>
+            <button onclick="document.location.href='/user_groups'">{fa_icon name="arrow-circle-left"}Відміна</button>
             <button type="submit">{fa_icon name="save"}Зберегти</button>
           </td>
         </tr>
