@@ -46,6 +46,10 @@ ul {
   padding: 15px;
 }
 
+ul li ul {
+  padding: 0 0 0 15px;
+}
+
 
 .main-content {
   padding: 10px;
@@ -64,7 +68,7 @@ ul {
 }
 
 .content-wrapper {
-  width: 1000px;
+  width: 97%;
   margin: 0 auto;
 }
 
@@ -288,6 +292,7 @@ button {
 
 .module {
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .module-wrapper {

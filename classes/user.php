@@ -90,6 +90,15 @@ Class User {
     return $this->is_admin === true || $this->is_admin == 1 ? true : null;
   }
 
+  public function is_logged() {
+    return $this->logged === true || $this->logged == 1 ? true : null;
+  }
+
+  public function has_permission($path) {
+    // Реализовать проверку прав доступа к разделам сайта
+    return true;
+  }
+
   public function toArray() {
     return array(
       "is_admin" => $this->is_admin,
