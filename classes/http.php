@@ -12,6 +12,11 @@ Class Http {
     header("Location: ".$url, true, 307);
   }
 
+  public static function unautorize() {
+    header("WWW-Authenticate: Basic realm=\"My Realm\"");
+    header("HTTP/1.0 401 Unauthorized");
+  }
+
   public static function post($key) {
     if (isset($_POST[$key])) {
       return $_POST[$key];

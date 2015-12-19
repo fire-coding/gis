@@ -42,6 +42,7 @@ Class Controller_Index Extends Controller_Base {
   function logout() {
     $_SESSION = array();
     session_destroy();
+    Http::unautorize();
     Http::redirect("/");
   }
 

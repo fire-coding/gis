@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//echo($_SERVER["REMOTE_USER"]);
+
 // PATH
 define ('DIRSEP', DIRECTORY_SEPARATOR);
 define ('SITE_PATH', realpath(dirname(__FILE__)) . DIRSEP);
