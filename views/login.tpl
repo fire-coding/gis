@@ -13,7 +13,7 @@
 </form>
 {else}
 <form action="/logout" method="POST">
-  <div class="user_info"><div class="fa fa-user">&nbsp</div>{if $user->is_admin === true}Адміністратор{else}{$user->display_name}{/if}</div>
+  <div class="user_info"><div class="fa fa-user">&nbsp</div>{$user->display_name}</div>
   <button type="submit">Вихід</button>
 </form>
 {/if}

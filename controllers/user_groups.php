@@ -14,7 +14,7 @@ Class Controller_User_groups extends Controller_Base
     $smarty = $this->registry->get("smarty");
     $user = $this->registry->get("user");
 
-    if ($user->is_admin === true) {
+    if ($user->is_admin()) {
       $this->registerModule("admin/common/menu", "left_side");
       $this->registerModule("admin/users/user_groups", "center_side");
     }
@@ -28,7 +28,7 @@ Class Controller_User_groups extends Controller_Base
     $smarty = $this->registry->get("smarty");
     $user = $this->registry->get("user");
 
-    if($user->is_admin === true) {
+    if($user->is_admin == 1) {
       $this->registerModule("admin/common/menu", "left_side");
       $this->registerModule("admin/users/group_add", "center_side");
     }
@@ -42,7 +42,7 @@ Class Controller_User_groups extends Controller_Base
     $smarty = $this->registry->get("smarty");
     $user = $this->registry->get("user");
 
-    if($user->is_admin === true) {
+    if($user->is_admin()) {
       $this->registerModule("admin/common/menu", "left_side");
       $this->registerModule("admin/users/group_edit", "center_side");
     }

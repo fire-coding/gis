@@ -13,7 +13,7 @@ Class Controller_Import Extends Controller_Base
     $smarty = $this->registry->get("smarty");
     $user = $this->registry->get("user");
 
-    if ($user->is_admin === true) {
+    if ($user->is_admin()) {
       $this->registerModule("admin/common/menu", "left_side");
       $this->registerModule("admin/system/import", "center_side");
     }

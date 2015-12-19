@@ -68,7 +68,7 @@ ul {
   margin: 0 auto;
 }
 
-a, a:visited {
+a, a:visited, a:hover {
   text-decoration: none;
   color: #555;
 }
@@ -325,7 +325,7 @@ button {
   line-height: 20px;
 }
 
-a:hover {
+.module a:hover {
   color: #2989d8;
 }
 

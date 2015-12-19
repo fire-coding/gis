@@ -1,11 +1,12 @@
+<?xml version="1.0"?>
 <settings>
 
   <!-- Database settings  -->
   <database>
-    <host>localhost1</host>
+    <host>localhost</host>
     <name>poligons</name>
-    <user>poligons</user>
-    <pass>poligons</pass>
+    <user>root</user>
+    <pass>Zerg1979</pass>
   </database>
 
   <database_external>
@@ -17,14 +18,14 @@
 
   <!-- Authentication mode -->
   <auth>
-    <mode>1</mode>
+    <mode>2</mode>
   </auth>
 
   <!-- Domain name server -->
   <ad_server>
-    <address>31.131.17.195</address>
-    <account_sufix>@test.local</account_sufix>
-    <base_dn>DC=test,DC=local</base_dn>
+    <address>95.47.114.222</address>
+    <account_sufix>@gis.local</account_sufix>
+    <base_dn>DC=gis,DC=local</base_dn>
   </ad_server>
 
 </settings>

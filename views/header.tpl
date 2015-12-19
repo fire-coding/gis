@@ -2,7 +2,7 @@
   <a href="/"><img src="/images/logo.png" /></a>
 </div>
 <div class="slogan">Автоматизована інформаційна система</div>
-{if $user->is_admin === true}
+{if $user->is_admin()}
 <!--div class="main-menu">
   <ul>
     <li class="active"><a href="/">Головна</a></li>

@@ -11,10 +11,6 @@ Class Registry Implements ArrayAccess {
   private $vars = array();
 
   function set($key, $var) {
-    if (isset($this->vars[$key]) == true) {
-      throw new Exception('Unable to set var `' . $key . '`. Already set.');
-    }
-
     $this->vars[$key] = $var;
     return true;
   }

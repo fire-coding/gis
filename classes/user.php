@@ -42,7 +42,7 @@ Class User {
         $user_model->add(array(
           "login" => $this->login,
           "password" => $this->password,
-          "is_admin" => $this->is_admin === true ? 1 : 0,
+          "is_admin" => $this->is_admin() ? 1: 0,
           "display_name" => $this->display_name
         ));
       }
@@ -78,12 +78,16 @@ Class User {
     if(isset($config[0]["memberof"])) {
       foreach($config[0]["memberof"] as $member) {
         if(mb_strpos($member, "Администраторы домена") != false) {
-          return true;
+          return 1;
         }
       }
     } else {
-      return false;
+      return 0;
     }
+  }
+
+  public function is_admin() {
+    return $this->is_admin === true || $this->is_admin == 1 ? true : null;
   }
 
   public function toArray() {

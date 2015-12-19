@@ -1,3 +1,6 @@
 .idea
 .gitignore
+.tmp
 poligons.sql
+config.xml
+info.php

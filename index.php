@@ -29,11 +29,11 @@ try {
 $router = new Router($registry);
 $registry->set ('router', $router);
 
+$user = new User();
 if(isset($_SESSION['user'])) {
-  $user = new User();
   $user->fromArray($_SESSION['user']);
-  $registry->set('user', $user);
 }
+$registry->set('user', $user);
 
 $router->setPath (SITE_PATH . 'controllers');
 $router->getController($file, $controller, $action, $args);
