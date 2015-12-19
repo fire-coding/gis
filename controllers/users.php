@@ -13,7 +13,7 @@ Class Controller_Users extends Controller_Base
     $user = $this->registry->get("user");
 
     if($user->is_admin()) {
-      $this->registerModule("admin/common/menu", "left_side");
+      $this->registerModule("admin/common/admin_menu", "left_side");
       $this->registerModule("admin/users/users", "center_side");
     }
 
@@ -27,7 +27,7 @@ Class Controller_Users extends Controller_Base
     $user = $this->registry->get("user");
 
     if($user->is_admin()) {
-      $this->registerModule("admin/common/menu", "left_side");
+      $this->registerModule("admin/common/admin_menu", "left_side");
       $this->registerModule("admin/users/user_add", "center_side");
     }
 
@@ -82,7 +82,7 @@ Class Controller_Users extends Controller_Base
     $user = $this->registry->get("user");
 
     if($user->is_admin()) {
-      $this->registerModule("admin/common/menu", "left_side");
+      $this->registerModule("admin/common/admin_menu", "left_side");
       $this->registerModule("admin/users/user_edit", "center_side");
     }
 

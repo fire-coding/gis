@@ -15,7 +15,7 @@ Class Controller_User_groups extends Controller_Base
     $user = $this->registry->get("user");
 
     if ($user->is_admin()) {
-      $this->registerModule("admin/common/menu", "left_side");
+      $this->registerModule("admin/common/admin_menu", "left_side");
       $this->registerModule("admin/users/user_groups", "center_side");
     }
 
@@ -43,7 +43,7 @@ Class Controller_User_groups extends Controller_Base
     $user = $this->registry->get("user");
 
     if($user->is_admin()) {
-      $this->registerModule("admin/common/menu", "left_side");
+      $this->registerModule("admin/common/admin_menu", "left_side");
       $this->registerModule("admin/users/group_edit", "center_side");
     }
 
