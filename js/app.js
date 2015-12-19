@@ -76,7 +76,6 @@ var App = function() {
     var msg = [];
     if(name == "") msg.push("Введіть логін користувача");
     if(display_name == "") msg.push("Введіть ім`я користувача");
-    if(email == "") msg.push("Введіть email користувача");
     if(pass == "") msg.push("Введіть пароль користувача");
     if(pass_confirm == "") msg.push("Введіть підтвердження паролю користувача");
     if(pass != pass_confirm) msg.push("Не співпадають введені паролі");
@@ -100,7 +99,6 @@ var App = function() {
     var msg = [];
     if(name == "") msg.push("Введіть логін користувача");
     if(display_name == "") msg.push("Введіть ім`я користувача");
-    if(email == "") msg.push("Введіть email користувача");
     if(pass != "" || pass_confirm != "") {
       if(pass != pass_confirm) msg.push("Не співпадають введені паролі");
     }
