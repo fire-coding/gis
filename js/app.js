@@ -3,6 +3,8 @@
  */
 var App = function() {
 
+  this.map = new Map();
+
   this.alert = function(text) {
     var wnd = new ZWindow({
       title: "<span class='fa fa-warning'>&nbsp;</span> Увага",
@@ -45,6 +47,21 @@ var App = function() {
 
   this.init = function() {
     this.initMask();
+    this.initGroupCheckBoxes();
+    this.map.init();
+  }
+
+  this.initGroupCheckBoxes = function() {
+    $("input:checkbox").on('click', function() {
+      var $box = $(this);
+      if ($box.is(":checked")) {
+        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+        $(group).prop("checked", false);
+        $box.prop("checked", true);
+      } else {
+        $box.prop("checked", false);
+      }
+    });
   }
 
   this.initMask = function() {

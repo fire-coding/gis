@@ -32,10 +32,15 @@ input, select, textarea {
   border-radius: 5px;
 }
 
-input[type="checkbox"] {
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"] {
   width: 18px;
   height: 18px;
-  margin: 0;
+  vertical-align: -5px;
+  margin: 3px;
   padding: 0;
   cursor: pointer;
 }
@@ -278,7 +283,7 @@ button {
 }
 
 .left-side {
-  width: 220px;
+  width: 240px;
 }
 
 .center-side {
@@ -287,11 +292,12 @@ button {
 }
 
 .right-side {
-  width: 220px;
+  width: 200px;
 }
 
 .module {
   width: 100%;
+  font-size: 12px;
   margin-bottom: 15px;
 }
 
@@ -382,6 +388,10 @@ button {
   border-bottom: 1px dotted #1F5B9E;
 }
 
+.module .fields_group.small {
+  font-size: 12px;
+}
+
 .users.module table th {
   padding: 5px;
   text-align: left;
@@ -417,4 +427,15 @@ a.btn {
   font-size: 13px;
   line-height: 15px;
   margin-right: 10px;
+}
+
+.search_filter td {
+  text-align: left;
+}
+
+.search_filter a {
+  color: #1F5B9E;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 12px;
 }
