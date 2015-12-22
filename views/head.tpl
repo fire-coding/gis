@@ -8,7 +8,15 @@
 <link rel="stylesheet" href="/css/zwindow.css" />
 
 <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
-<script src="http://openlayers.org/api/OpenLayers.js"></script>
 <script type="text/javascript" src="/js/zwindow.js"></script>
 <script type="text/javascript" src="/js/map.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
+
+{* PROJ4JS *}
+{if !$user->is_admin() }
+  <script type="text/javascript" src="/libs/proj4js/proj4js.js"></script>
+  <script type="text/javascript" src="/libs/proj4js/defs/EquidistantConic_Ukraine.js"></script>
+  <script type="text/javascript" src="/libs/proj4js/defs/EPSG900913.js"></script>
+  <script type="text/javascript" src="/libs/proj4js/defs/EPSG27200.js"></script>
+  <script type="text/javascript" src="/libs/proj4js/defs/My_proj.js"></script>
+{/if}

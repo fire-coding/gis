@@ -3,8 +3,6 @@
  */
 var App = function() {
 
-  this.map = new Map();
-
   this.alert = function(text) {
     var wnd = new ZWindow({
       title: "<span class='fa fa-warning'>&nbsp;</span> Увага",
@@ -48,7 +46,6 @@ var App = function() {
   this.init = function() {
     this.initMask();
     this.initGroupCheckBoxes();
-    this.map.init();
   }
 
   this.initGroupCheckBoxes = function() {
