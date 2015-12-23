@@ -105,7 +105,7 @@ var Map = function() {
 
   this.renderMap = function() {
     this.MapInstance.addLayers(this.Layers);
-    this.MapInstance.zoomTo(6);
+    this.MapInstance.zoomToExtent(new OpenLayers.Bounds( 3356326, 6457333,3424508 , 6519470));//Украина);
   }
 
 
