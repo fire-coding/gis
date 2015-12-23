@@ -7,15 +7,39 @@ var Map = function() {
 
   this.MapInstance = null;
 
+  this.MapControls = [];
+
+  this.MapRenderer = null;
+
+  this.Layers = [];
+
   this.projHash = {};
+
+  this.railZoomStart = -1;
+
+  this.railZoomFinish = -1;
 
   this.init = function() {
 
     // Init Proj4js
     this.initProj4js();
 
+    // Init Map Controls
+    this.initMapControls();
+
     // Init Map
     this.initMap();
+
+    // Init Renderer
+    this.initRenderer();
+
+    // Init Layers
+    this.initLayers();
+
+
+    // Finish initialization and render map
+    this.renderMap();
+
   }
 
   this.initProj4js = function() {
@@ -25,8 +49,9 @@ var Map = function() {
   }
 
   this.initMap = function() {
+
     var options = {
-      controls: [],
+      controls: this.MapControls,
       projection: new OpenLayers.Projection("EPSG:900913"),
       displayProjection:new OpenLayers.Projection("EPSG:4326"),
       numZoomLevels:25,
@@ -42,12 +67,39 @@ var Map = function() {
       map:this.MapInstance
     });
 
-    var ZoomControl = new OpenLayers.Control.PanZoom();
-    ch_but(ZoomControl);
-    this.MapInstance.addControl(ZoomControl);
   }
 
+  this.initMapControls = function() {
 
+    // ZOOM
+    var ZoomControl = new OpenLayers.Control.PanZoom();
+    ch_but(ZoomControl);
+    this.MapControls.push(ZoomControl);
+
+    // MOUSE
+    var MousePosition = new OpenLayers.Control.MousePosition();
+    this.MapControls.push(MousePosition);
+
+  }
+
+  this.initRenderer = function() {
+    this.MapRenderer = OpenLayers.Layer.Vector.prototype.renderers;
+  }
+
+  this.initLayers = function() {
+    var BaseLayer = new OpenLayers.Layer.TMS( "Карта", "", {
+      buffer:0,
+      type: 'png', getURL: MapProvider.scanexProvider,
+      alpha: true,
+      isBaseLayer: true
+    });
+
+    this.Layers.push(BaseLayer);
+  }
+
+  this.renderMap = function() {
+    this.MapInstance.addLayers(this.Layers);
+  }
 
 
 

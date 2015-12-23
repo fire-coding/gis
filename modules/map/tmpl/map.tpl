@@ -9,6 +9,7 @@
 <script type="text/javascript" src="/modules/map/libs/openlayers/OpenLayers.js"></script>
 
 {* MAP MODULE *}
+<script type="text/javascript" src="/modules/map/js/mapprovider.js"></script>
 <script type="text/javascript" src="/modules/map/js/mapobjects.js"></script>
 <script type="text/javascript" src="/modules/map/js/maphelper.js"></script>
 <script type="text/javascript" src="/modules/map/js/map.js"></script>
