@@ -3,7 +3,7 @@
  */
 var MapProvider = {
 
-  url: "http://gis.localhost/tiles/",
+  url: "http://192.168.0.121/tiles/",
 
   scanexProvider: function(bounds) {
     var res = appMap.MapInstance.getResolution();
@@ -16,7 +16,7 @@ var MapProvider = {
     if (appMap.mapBounds.intersectsBounds( bounds ) && z >= appMap.mapMinZoom && z <= appMap.mapMaxZoom ) {
       return MapProvider.url + "gis_ua_web/" + z + "/" + x + "/" + y + "." +this.type;
     } else {
-      return MapProvider.url + "none.png";
+      return "/theme/images/none.png";
     }
   }
 
