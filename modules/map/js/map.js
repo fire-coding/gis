@@ -19,11 +19,11 @@ var Map = function() {
 
   this.railZoomFinish = -1;
 
-  this.mapBounds = new OpenLayers.Bounds( 21.1841277,43.853281924,41.0602168317,52.5907424);
+  this.mapBounds = new OpenLayers.Bounds( 2358206.308463682,6907652.239047858,4570802.429566245,5442765.225233972);
 
-  this.mapMinZoom = 6;
+  this.mapMinZoom = 4;
 
-  this.mapMaxZoom = 10;
+  this.mapMaxZoom = 19;
 
   this.init = function() {
 
@@ -105,7 +105,7 @@ var Map = function() {
 
   this.renderMap = function() {
     this.MapInstance.addLayers(this.Layers);
-    this.MapInstance.zoomToExtent(new OpenLayers.Bounds( 3356326, 6457333,3424508 , 6519470));//Украина);
+    this.MapInstance.zoomTo(6);
   }
 
 
