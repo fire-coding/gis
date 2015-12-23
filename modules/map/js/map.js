@@ -19,7 +19,7 @@ var Map = function() {
 
   this.railZoomFinish = -1;
 
-  this.mapBounds = new OpenLayers.Bounds( 31.1841277,47.853281924,41.0602168317,52.5907424);
+  this.mapBounds = new OpenLayers.Bounds( 34.19,47.853281924,41.24,52.5907424);
 
   this.mapMinZoom = 6;
 
