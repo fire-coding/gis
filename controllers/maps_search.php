@@ -13,7 +13,7 @@ Class Controller_Maps_Search extends Controller_Base {
     if(!$user->has_permission("client/maps/search")) { Http::redirect('/'); exit; }
 
     $this->registerModule("client/common/client_menu", "left_side");
-    $this->registerModule("client/maps/search/maps_search", "center_side");
+    $this->registerModule("map/map", "center_side");
     $this->registerModule("client/maps/search/maps_search_filter", "right_side");
 
     $regions_model = DB::loadModel("maps/regions");

@@ -1,5 +1,5 @@
 <div class="logo">
-  <a href="/"><img src="/images/logo.png" /></a>
+  <a href="/"><img src="/theme/images/logo.png" /></a>
 </div>
 <div class="copyright">
   <span class="fa fa-copyright">&nbsp;</span>
@@ -11,7 +11,7 @@
 </div>
 
 {literal}
-<script type="text/javascript">(function() {
+<!--script type="text/javascript">(function() {
   if (window.pluso)if (typeof window.pluso.start == "function") return;
   if (window.ifpluso==undefined) { window.ifpluso = 1;
     var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
@@ -20,8 +20,8 @@
     var h=d[g]('body')[0];
     h.appendChild(s);
   }})();
-</script>
+</script-->
 {/literal}
-<div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,counter,theme=03" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
+<!--div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,counter,theme=03" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div-->
 
 

@@ -9,7 +9,7 @@ define ('SITE_PATH', realpath(dirname(__FILE__)) . DIRSEP);
 define ('MODELS_PATH', SITE_PATH . "models" . DIRSEP);
 define ('MODULES_PATH', SITE_PATH . "modules" . DIRSEP);
 define ('TMPL_PATH', SITE_PATH . "views" . DIRSEP);
-require SITE_PATH . "includes/startup.php";
+require SITE_PATH . "startup.php";
 
 $smarty = new Smarty;
 $smarty->compile_check = true;

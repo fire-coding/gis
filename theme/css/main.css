@@ -1,0 +1,441 @@
+body {
+  color: #333;
+  font:normal 400 14px 'Open Sans',Arial,sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url('/theme/images/background.jpg');
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+72,207cca+100,7db9e8+100 */
+  background: #1e5799; /* Old browsers */
+  background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 72%, #207cca 100%, #7db9e8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 72%,#207cca 100%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 72%,#207cca 100%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  color: #fff;
+}
+
+input, select, textarea {
+  padding: 5px;
+  border: 1px solid #1F5B9E;
+  border-radius: 5px;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  vertical-align: -5px;
+  margin: 3px;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+}
+
+ul li ul {
+  padding: 0 0 0 15px;
+}
+
+
+.main-content {
+  padding: 10px;
+  min-height: 400px;
+  background-color: #FEFEFE;
+  border-left: 1px solid #D7D7D7;
+  border-right: 1px solid #D7D7D7;
+}
+
+.main-content table {
+  width: 100%;
+}
+
+.main-content td {
+  vertical-align: top;
+}
+
+.content-wrapper {
+  width: 97%;
+  margin: 0 auto;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: #555;
+}
+
+.header {
+  background-color: #E6E9EA;
+  height: 70px;
+  border: 1px solid #07458A;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 15px;
+}
+
+.logo {
+  float: left;
+  padding-left: 20px;
+}
+
+.logo img {
+  width: 90px;
+  height: auto;
+}
+
+.main-menu {
+  float: left;
+}
+
+.main-menu ul {
+  list-style: none;
+}
+
+.main-menu ul li {
+  float: left;
+  margin-right: 25px;
+}
+
+.main-menu ul li {
+  font-size: 14px;
+  color: #fff;
+  line-height: 18px;
+  padding: 15px 0px 5px 0px;
+  cursor: pointer;
+}
+
+.main-menu ul li:hover, .main-menu ul li.active {
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+}
+
+.main-menu ul li a, .main-menu ul li:hover a, .main-menu ul li.active a {
+  color: #fff;
+}
+
+.start-page {
+  height: 645px;
+  background-size: cover;
+}
+
+.slogan {
+  font-size: 18px;
+  float: left;
+  padding-left: 0px;
+  margin-top: 37px;
+}
+
+.login-window {
+  width: 300px;
+  height: 210px;
+  background-color: #E2E0E0;
+  border-radius: 10px;
+  border: 1px solid #246FB7;
+  margin: 100px auto;
+}
+
+.login-window button {
+  width: 100px;
+}
+
+.shadow {
+  -webkit-box-shadow: 2px 2px 52px 15px #fff;
+  -moz-box-shadow: 2px 2px 52px 15px #fff;
+  box-shadow: 2px 2px 52px 15px #fff;
+}
+
+.login-window-title {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.login-window-body {
+  padding:10px;
+}
+
+.login-window-body input {
+  padding-left: 30px;
+  font-size: 18px;
+  margin-top: 15px;
+  color: #07458A !important;
+  position: relative;
+  width: 240px;
+}
+
+.login-window-body button {
+  font-size: 18px;
+}
+
+.login-window-body .buttons {
+  margin: 15px auto;
+  width: 100px;
+}
+
+.field-v {
+  position: relative;
+}
+
+.field-v .fa {
+  font-size: 18px;
+  color: #07458A;
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  z-index: 999;
+}
+
+
+.login .field {
+  position: relative;
+  float: left;
+}
+
+.login .field .fa {
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  color: #428CCE;
+}
+
+.login input {
+  width: 100px;
+  float: left;
+  margin-right: 5px;
+  padding-left: 25px;
+}
+
+button {
+  padding: 5px 10px;
+  border: 1px solid #1F5B9E;
+  float: left;
+  background-color: #428CCE;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.module button {
+  margin-right: 10px;
+}
+
+.login {
+  float: right;
+  padding: 20px;
+}
+
+.login_err {
+  color: #b70308;
+  line-height: 25px;
+}
+
+.user_info {
+  float: left;
+  margin-right: 10px;
+  padding-left: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.footer {
+  height: 80px;
+  margin-bottom: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.footer a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.footer .copyright {
+  padding: 20px 10px;
+  width: 300px;
+  float: left;
+}
+
+.footer .pluso {
+  float: right;
+  margin-top: 25px;
+  margin-right: 15px;
+}
+
+.left-side {
+  width: 240px;
+}
+
+.center-side {
+  width: 740px;
+  padding: 0 15px;
+}
+
+.right-side {
+  width: 200px;
+}
+
+.module {
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.module-wrapper {
+  padding: 10px;
+  border-left: 1px solid #D7D7D7;
+  border-right: 1px solid #D7D7D7;
+  border-bottom: 1px solid #D7D7D7;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.module-title {
+  line-height: 30px;
+  padding-left: 10px;
+  border-left: 1px solid #07458A;
+  border-right: 1px solid #07458A;
+  border-top: 1px solid #07458A;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.menu ul li {
+  border-bottom: 1px dotted #D7D7D7;
+  line-height: 30px;
+}
+
+.menu ul li.active a {
+  color: #2989d8;
+  font-weight: bold;
+}
+
+.menu ul li ul li {
+  border: none;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.module a:hover {
+  color: #2989d8;
+}
+
+.panel.module .icon-wrapper {
+  width: 100px;
+  float: left;
+  margin-right: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.panel.module .icon-wrapper img {
+  width: 64px;
+  height: 64px;
+}
+
+.panel.module .module-wrapper {
+  display: flex;
+}
+
+.module .var_name {
+  width: 300px;
+}
+
+.module input {
+  width: 200px;
+}
+
+.module input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.module select {
+  width: 212px;
+}
+
+.module textarea {
+  width: 250px;
+  height: 100px;
+}
+
+.module .fields_group {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 10px;
+  color: #1F5B9E;
+  border-bottom: 1px dotted #1F5B9E;
+}
+
+.module .fields_group.small {
+  font-size: 12px;
+}
+
+.users.module table th {
+  padding: 5px;
+  text-align: left;
+  background-color: #eee;
+}
+
+.users.module table td {
+  border-bottom: 1px dotted #999;
+  padding: 5px;
+}
+
+.users.module table td a {
+  color: #1556d8;
+}
+
+.buttons-wrapper {
+  height: 40px;
+}
+
+.buttons-wrapper button, .buttons-wrapper a {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+a.btn {
+  padding: 5px 10px;
+  border: 1px solid #1F5B9E;
+  float: left;
+  background-color: #428CCE;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 15px;
+  margin-right: 10px;
+}
+
+.search_filter td {
+  text-align: left;
+}
+
+.search_filter a {
+  color: #1F5B9E;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 12px;
+}
