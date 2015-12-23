@@ -19,6 +19,12 @@ var Map = function() {
 
   this.railZoomFinish = -1;
 
+  this.mapBounds = new OpenLayers.Bounds( 21.1841277,43.853281924,41.0602168317,52.5907424);
+
+  this.mapMinZoom = 4;
+
+  this.mapMaxZoom = 19;
+
   this.init = function() {
 
     // Init Proj4js
@@ -99,6 +105,7 @@ var Map = function() {
 
   this.renderMap = function() {
     this.MapInstance.addLayers(this.Layers);
+    this.MapInstance.zoomTo(4);
   }
 
 
