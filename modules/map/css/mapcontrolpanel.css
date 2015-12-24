@@ -1,0 +1,15 @@
+.olControlNavigation_top {
+  width: 40px;
+  background-size: 40px;
+  height: 40px;
+  background-image: url(../images/hand-on.png);
+  cursor: pointer;
+}
+
+.zoomTo_top {
+  width: 40px;
+  background-size: 40px;
+  height: 40px;
+  background-image: url(../images/zoom_area.png);
+  cursor: pointer;
+}

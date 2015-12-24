@@ -58,30 +58,28 @@ function clone(object)
 /*
 Ограничивает просматриваемую карту и устанавливает максимальное величение карты в maxZoom...
 */
-function ex(map,bounds,maxZoom,minZoom)
-{
-map.restrictedExtent=bounds.clone();
-map.numZoomLevels=maxZoom;
-MIN_ZOOM_MAP=minZoom;
-MAX_ZOOM_MAP=maxZoom;
-map.events.register("zoomend", map, ExtendToUkrZoom);
+function ex(map,bounds,maxZoom,minZoom) {
+	appMap.MapInstance.restrictedExtent = bounds.clone();
+	appMap.MapInstance.numZoomLevels = maxZoom;
+	MIN_ZOOM_MAP = minZoom;
+	MAX_ZOOM_MAP = maxZoom;
+	appMap.MapInstance.events.register("zoomend", appMap.MapInstance, ExtendToUkrZoom);
 
-map.events.register("moveend", map, moveend);
-map.events.register("movestart", map, movestart);
+	appMap.MapInstance.events.register("moveend", appMap.MapInstance, moveend);
+	appMap.MapInstance.events.register("movestart", appMap.MapInstance, movestart);
 }
-function	movestart(evt)
+function movestart(evt)
 {
-    var zoom=map.getZoom();
-	boundsLast=map.getExtent();
-    //OpenLayers.Event.stop(evt);
+	var zoom = appMap.MapInstance.getZoom();
+	boundsLast=appMap.MapInstance.getExtent();
 }
 function	repaint_vector()
 {
 
 if(repaint_task)
 {
-    var zoom=map.getZoom();
-    var bounds=map.getExtent();
+    var zoom=appMap.MapInstance.getZoom();
+    var bounds=appMap.MapInstance.getExtent();
     if(typeof(ImagePictures)!='undefined'&&ImagePictures.features)ImagePictures.destroyFeatures(ImagePictures.features,null);
     if(typeof(City_points)!='undefined'&&City_points.features)City_points.destroyFeatures(City_points.features,null);
     if(typeof(GPS)!='undefined'&&GPS.features)GPS.destroyFeatures(GPS.features,null);
@@ -90,11 +88,11 @@ if(repaint_task)
     /*
     if(typeof(Border_region)!='undefined'&&Border_region.features)Border_region.destroyFeatures(Border_region.features,null);
    */ 
-    if(map.infoPopup)map.infoPopup.hide();
+    if(appMap.MapInstance.infoPopup)map.infoPopup.hide();
     if(typeof(PoiArray)!='undefined')if(PoiArray.popup)PoiArray.popup.hide();
     
     settings['table']="traffic_accidents";
-    settings['ID']=map.road;
+    settings['ID']=appMap.MapInstance.road;
     settings['zoom']=zoom;
     settings['extent']=bounds;
 
@@ -113,7 +111,7 @@ if(repaint_task)
         settings['extent']=bounds;
         if(typeof(RoadsNetwork)!='undefined')if(RoadsNetwork.getVisibility())
         {
-        bounds=map.getExtent();
+        bounds=appMap.MapInstance.getExtent();
         
         if(RoadsArray.objects!=null) settings['extentLast']=boundsLast
         else RoadsArray.objects={};
@@ -134,8 +132,8 @@ if(repaint_task)
     
     if(typeof(City_points)!='undefined'&&typeof(tmsoverlay_irs)!='undefined')if(zoom>=11&&tmsoverlay_irs.getVisibility())
     {
-        bounds=map.getExtent();
-        doLoad_cities(2,bounds.transform(map.projection,proj_4326),"citi_ext");
+        bounds=appMap.MapInstance.getExtent();
+        doLoad_cities(2,bounds.transform(appMap.MapInstance.projection,proj_4326),"citi_ext");
     }
     
     
@@ -147,7 +145,7 @@ if(repaint_task)
 function	moveend(evt)
 {
 		repaint_vector();
-        boundsNew=map.getExtent();
+        boundsNew=appMap.MapInstance.getExtent();
 		//OpenLayers.Event.stop(evt);
 }
 
