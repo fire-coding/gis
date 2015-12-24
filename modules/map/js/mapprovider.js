@@ -19,7 +19,4 @@ var MapProvider = {
     }
   }
 
-
-
-
 }

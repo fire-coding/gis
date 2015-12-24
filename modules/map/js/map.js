@@ -14,7 +14,9 @@ var Map = function() {
 
   this.defaultUnit = "m";
 
-  this.tilesUrl = "http://gis.localhost/tiles/";
+  //this.tilesUrl = "http://gis.localhost/tiles/";
+
+  this.tilesUrl = "http://192.168.0.121/tiles/";
 
   this.maxResolution = 156543.0339;
 
