@@ -26,7 +26,7 @@ var Map = function() {
 
   this.mapMinZoom = 6;
 
-  this.mapMaxZoom = 18;
+  this.mapMaxZoom = 15;
 
   // PROPS
   this.MapObj = null;
