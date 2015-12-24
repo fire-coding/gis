@@ -39,6 +39,8 @@ var Map = function() {
 
   this.projHash = {};
 
+  this.MapEventsHandler = new MapEventsHandler();
+
   // METHODS
   this.init = function() {
 
@@ -56,6 +58,9 @@ var Map = function() {
 
     // Finish initialization and render map
     this.renderMap();
+
+    // Init Map Events Handler
+    this.MapEventsHandler.init();
 
   }
 

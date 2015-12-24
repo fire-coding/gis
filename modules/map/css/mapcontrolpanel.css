@@ -1,4 +1,6 @@
 .olControlNavigation_top {
+  left: 10px;
+  top: 10px;
   width: 40px;
   background-size: 40px;
   height: 40px;
@@ -7,9 +9,21 @@
 }
 
 .zoomTo_top {
+  left: 60px;
+  top: 10px;
   width: 40px;
   background-size: 40px;
   height: 40px;
   background-image: url(../images/zoom_area.png);
+  cursor: pointer;
+}
+
+.clearPict_top {
+  left: 120px;
+  top: 10px;
+  width: 40px;
+  background-size: 40px;
+  height: 40px;
+  background-image: url(../images/clear.png);
   cursor: pointer;
 }

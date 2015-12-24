@@ -30,39 +30,37 @@ var MapControlPanel = function() {
   this.initMoveCtrl = function() {
     var control = new OpenLayers.Control({
       title:'Перемістити фрагмент',
-      eventListeners:{
-        "activate": function() {
-
-        },
-        "deactivate": function(){
-
-        }
-      },
-      displayClass: "olControlNavigation_top"
+      type: OpenLayers. Control.TYPE_BUTTON,
+      displayClass: "olControlNavigation_top",
+      trigger: function() {
+        debugger;
+      }
     });
-
     this.controls.push(control);
   }
 
   // ZOOM CTRL
   this.initZoomCtrl = function() {
-    var control = new OpenLayers.Control.ZoomBox({
+    var control = new OpenLayers.Control({
       title:'Збільшити фрагмент',
-      displayClass: "zoomTo_top"
+      type: OpenLayers. Control.TYPE_BUTTON,
+      displayClass: "zoomTo_top",
+      trigger: function() {
+        debugger;
+      }
     });
-
     this.controls.push(control);
   }
 
   // CLEAR VECTOR CTRL
   this.initClearVectorCtrl = function() {
     var control = new OpenLayers.Control({
-      title:'Очистити',
-      type:OpenLayers. Control.TYPE_BUTTON,
+      title: 'Очистити',
+      type: OpenLayers. Control.TYPE_BUTTON,
+      displayClass: "clearPict_top",
       trigger:function(){
 
-      },
-      displayClass: "clearPict_top"
+      }
     });
 
     this.controls.push(control);

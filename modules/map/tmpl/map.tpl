@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/modules/map/js/mapprovider.js"></script>
 <script type="text/javascript" src="/modules/map/js/mapobjects.js"></script>
 <script type="text/javascript" src="/modules/map/js/maphelper.js"></script>
+<script type="text/javascript" src="/modules/map/js/mapeventshandler.js"></script>
 <script type="text/javascript" src="/modules/map/js/map.js"></script>
 
 <div class="menu module">
