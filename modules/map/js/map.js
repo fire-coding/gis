@@ -20,11 +20,11 @@ var Map = function() {
 
   this.maxResolution = 156543.0339;
 
-  this.maxExtend = new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34);
+  this.maxExtend = MapProvider.MAX_EXTEND;
 
-  this.mapBounds = new OpenLayers.Bounds(2358206.308463682, 5442765.225233972,4570802.429566245, 6907652.239047858);
+  this.mapBounds = MapProvider.BOUNDS_UKRAINE;
 
-  this.mapMinZoom = 1;
+  this.mapMinZoom = 6;
 
   this.mapMaxZoom = 10;
 
@@ -76,7 +76,9 @@ var Map = function() {
       controls: this.MapControls,
       projection: new OpenLayers.Projection(this.projection),
       displayProjection: new OpenLayers.Projection(this.displayProjection),
-      numZoomLevels: 25,
+      numZoomLevels: this.mapMaxZoom,
+      minZoom: this.mapMinZoom,
+      maxZoom: this.mapMaxZoom,
       theme: this.themePath,
       units: this.defaultUnit,
       maxResolution: this.maxResolution,
@@ -108,6 +110,10 @@ var Map = function() {
     var mapControlPanel = new MapControlPanel();
     this.MapControls.push(mapControlPanel.controlPanel);
 
+    // NAVIGATION
+    var navigation = new OpenLayers.Control.Navigation();
+    this.MapControls.push(navigation);
+
     // MOUSE
     var MousePosition = new OpenLayers.Control.MousePosition();
     this.MapControls.push(MousePosition);
@@ -127,7 +133,11 @@ var Map = function() {
 
   this.renderMap = function() {
     this.MapInstance.addLayers(this.Layers);
-    this.MapInstance.zoomToExtent(this.mapBounds);
+    this.displayBounds(this.mapBounds);
+  }
+
+  this.displayBounds = function(bounds) {
+    this.MapInstance.zoomToExtent(bounds);
   }
 
 }

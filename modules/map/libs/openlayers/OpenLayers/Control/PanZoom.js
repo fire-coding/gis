@@ -183,6 +183,9 @@ OpenLayers.Control.PanZoom = OpenLayers.Class(OpenLayers.Control, {
      * evt - {Event}
      */
     onButtonClick: function(evt) {
+        var minZoom = typeof(this.map.options.minZoom) == "undefined" ? 0 : this.map.options.minZoom;
+        var maxZoom = typeof(this.map.options.maxZoom) == "undefined" ? this.map.getNumZoomLevels() : this.map.options.maxZoom;
+
         var btn = evt.buttonElement;
         switch (btn.action) {
             case "panup": 
@@ -197,12 +200,16 @@ OpenLayers.Control.PanZoom = OpenLayers.Class(OpenLayers.Control, {
             case "panright": 
                 this.map.pan(this.getSlideFactor("w"), 0);
                 break;
-            case "zoomin": 
-                this.map.zoomIn(); 
+            case "zoomin":
+                if(this.map.getZoom() < maxZoom) {
+                    this.map.zoomIn();
+                }
                 break;
-            case "zoomout": 
-                this.map.zoomOut(); 
-                break;
+            case "zoomout":
+              if(this.map.getZoom() > minZoom) {
+                  this.map.zoomOut();
+              }
+              break;
             case "zoomworld": 
                 this.map.zoomToMaxExtent(); 
                 break;

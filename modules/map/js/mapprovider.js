@@ -3,6 +3,10 @@
  */
 var MapProvider = {
 
+  MAX_EXTEND: new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34),
+
+  BOUNDS_UKRAINE: new OpenLayers.Bounds(2572593.432232552, 5761139.945214054, 4203423.97235401, 6865481.656980445),
+
   scanexProvider: function(bounds) {
     var res = appMap.MapInstance.getResolution();
     var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
