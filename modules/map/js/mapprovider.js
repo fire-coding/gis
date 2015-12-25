@@ -12,7 +12,7 @@ var MapProvider = {
   },
 
   kosmoProvider: function(bounds) {
-    return MapProvider.provide(bounds, "gis_kosmo_ua", "jpg", this);
+    return MapProvider.provide(bounds, "kosmo_2009", "jpg", this);
   },
 
   provide: function(bounds, prefix, type, scope) {
