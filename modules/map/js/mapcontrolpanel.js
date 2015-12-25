@@ -136,6 +136,11 @@ var MapControlPanel = function() {
       case 'map':
         appMap.MapInstance.baseLayer.getURL = MapProvider.scanexProvider;
         break;
+
+      case 'kosmo':
+        appMap.MapInstance.baseLayer.getURL = MapProvider.kosmoProvider;
+        break;
+
       default:
         appMap.MapInstance.baseLayer.getURL = MapProvider.scanexProvider;
         break;
