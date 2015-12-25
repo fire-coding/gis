@@ -3,7 +3,7 @@
  */
 var Map = function() {
 
-  this.local = 1;
+  this.local = 0;
 
   // CONSTANTS
   this.mapElId = 'op-map';
