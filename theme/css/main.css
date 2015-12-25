@@ -57,7 +57,7 @@ ul li ul {
 
 
 .main-content {
-  padding: 10px;
+  padding: 5px;
   min-height: 400px;
   background-color: #FEFEFE;
   border-left: 1px solid #D7D7D7;
@@ -287,8 +287,7 @@ button {
 }
 
 .center-side {
-  width: 740px;
-  padding: 0 15px;
+  padding-left: 5px;
 }
 
 .right-side {

@@ -118,10 +118,17 @@ var MapControlPanel = function() {
       title: 'Тип карти',
       displayClass: "maptype_top",
       trigger: function() {
-        var left = $('.maptype_topItemInactive').position().left + 45;
-        var top = $('.maptype_topItemInactive').position().top + 45;
-        $('#map_change_ctrl').show();
-        $('#map_change_ctrl').css({
+        var btnEl = $('.maptype_topItemInactive');
+        var ctrl = $('#map_change_ctrl');
+        if(ctrl.css('display') == "block") {
+          ctrl.hide();
+          return;
+        }
+
+        var left = btnEl.position().left + 45;
+        var top = btnEl.position().top + 45;
+        ctrl.show();
+        ctrl.css({
           left: left,
           top: top
         });

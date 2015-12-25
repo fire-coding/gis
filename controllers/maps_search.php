@@ -14,10 +14,10 @@ Class Controller_Maps_Search extends Controller_Base {
 
     $this->registerModule("client/common/client_menu", "left_side");
     $this->registerModule("map/map", "center_side");
-    $this->registerModule("client/maps/search/maps_search_filter", "right_side");
+    //$this->registerModule("client/maps/search/maps_search_filter", "right_side");
 
-    $regions_model = DB::loadModel("maps/regions");
-    $regions = $regions_model->getAll();
+//    $regions_model = DB::loadModel("maps/regions");
+//    $regions = $regions_model->getAll();
 
     $smarty = $this->registry->get("smarty");
     $smarty->assign("regions", $regions);
