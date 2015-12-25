@@ -8,11 +8,11 @@ var MapProvider = {
   BOUNDS_UKRAINE: new OpenLayers.Bounds(3012305.420865983, 6182047.999176792, 3826050.8985648127, 6883730.558321303),
 
   scanexProvider: function(bounds) {
-    return this.provide(bounds, "gis_ua_web");
+    return MapProvider.provide(bounds, "gis_ua_web");
   },
 
   kosmoProvider: function(bounds) {
-    return this.provide(bounds, "gis_kosmo_ua");
+    return MapProvider.provide(bounds, "gis_kosmo_ua");
   },
 
   provide: function(bounds, prefix) {
