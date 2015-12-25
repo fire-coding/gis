@@ -15,6 +15,14 @@ var MapProvider = {
     return MapProvider.provide(bounds, "gis_kosmo_ua", "jpg", this);
   },
 
+  topoProvider: function(bounds) {
+    return MapProvider.provide(bounds, "kobl_topo", "jpg", this);
+  },
+
+  vectorTopoProvider: function(bounds) {
+    return MapProvider.provide(bounds, "gis_topoznak_50", "png", this);
+  },
+
   provide: function(bounds, prefix, type, scope) {
     var res = appMap.MapInstance.getResolution();
     var x = Math.round((bounds.left - scope.maxExtent.left) / (res * scope.tileSize.w));

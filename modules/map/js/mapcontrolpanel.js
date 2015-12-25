@@ -141,6 +141,14 @@ var MapControlPanel = function() {
         appMap.MapInstance.baseLayer.getURL = MapProvider.kosmoProvider;
         break;
 
+      case 'topo':
+        appMap.MapInstance.baseLayer.getURL = MapProvider.topoProvider;
+        break;
+
+      case 'vector-topo':
+        appMap.MapInstance.baseLayer.getURL = MapProvider.vectorTopoProvider;
+        break;
+
       default:
         appMap.MapInstance.baseLayer.getURL = MapProvider.scanexProvider;
         break;
