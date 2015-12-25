@@ -16,7 +16,7 @@ var MapProvider = {
   },
 
   topoProvider: function(bounds) {
-    return MapProvider.provide(bounds, "kobl_topo", "jpg", this);
+    return MapProvider.provide(bounds, "kobl_topo", "png", this);
   },
 
   vectorTopoProvider: function(bounds) {
