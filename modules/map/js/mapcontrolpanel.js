@@ -145,7 +145,7 @@ var MapControlPanel = function() {
         appMap.MapInstance.baseLayer.getURL = MapProvider.scanexProvider;
         break;
     }
-    appMap.MapInstance.zoomToExtent(MapProvider.BOUNDS_UKRAINE);
+    appMap.MapInstance.baseLayer.redraw();
   }
 
   // Get All controls array
