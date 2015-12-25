@@ -3,6 +3,8 @@
  */
 var Map = function() {
 
+  this.local = 1;
+
   // CONSTANTS
   this.mapElId = 'op-map';
 
@@ -14,9 +16,17 @@ var Map = function() {
 
   this.defaultUnit = "m";
 
-  //this.tilesUrl = "http://gis.localhost/tiles/";
+  if(this.local == 1) {
 
-  this.tilesUrl = "http://192.168.0.121/tiles/";
+    // LOCAL MAPS
+    this.tilesUrl = "http://gis.localhost/tiles/";
+    this.mapMaxZoom = 8;
+  } else {
+
+    // EXTEND MAPS
+    this.tilesUrl = "http://192.168.0.121/tiles/";
+    this.mapMaxZoom = 15;
+  }
 
   this.maxResolution = 156543.0339;
 
@@ -26,14 +36,14 @@ var Map = function() {
 
   this.mapMinZoom = 6;
 
-  this.mapMaxZoom = 15;
-
   // PROPS
   this.MapObj = null;
 
   this.MapInstance = null;
 
   this.MapControls = [];
+
+  this.MapControlPanel = null;
 
   this.Layers = [];
 
@@ -97,18 +107,11 @@ var Map = function() {
 
     // ZOOM
     var ZoomControl = new OpenLayers.Control.PanZoom();
-    ch_but(ZoomControl);
     this.MapControls.push(ZoomControl);
 
-    // SCALE LINE
-    //var ScaleControl = OpenLayers.Control.ScaleLine();
-    //this.MapControls.push(ScaleControl);
-    //
-    //this.MapControls.push(HControl);
-
     // MAP CONTROL PANEL
-    var mapControlPanel = new MapControlPanel();
-    this.MapControls.push(mapControlPanel.controlPanel);
+    this.MapControlPanel = new MapControlPanel();
+    this.MapControls.push(this.MapControlPanel.controlPanel);
 
     // NAVIGATION
     var navigation = new OpenLayers.Control.Navigation();
@@ -117,6 +120,17 @@ var Map = function() {
     // MOUSE
     var MousePosition = new OpenLayers.Control.MousePosition();
     this.MapControls.push(MousePosition);
+
+    // SCALE LINE
+    var ScaleControl = new OpenLayers.Control.ScaleLine({
+      geodesic:true,
+      bottomOutUnits:""
+    });
+    this.MapControls.push(ScaleControl);
+
+    window.setTimeout(function() {
+      ScaleControl.update();
+    }, 1000);
 
   }
 

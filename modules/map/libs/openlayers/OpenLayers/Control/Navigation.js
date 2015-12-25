@@ -266,17 +266,17 @@ OpenLayers.Control.Navigation = OpenLayers.Class(OpenLayers.Control, {
      * deltaZ - {Integer}
      */
     wheelChange: function(evt, deltaZ) {
+        var minZoom = typeof(this.map.options.minZoom) == "undefined" ? 0 : this.map.options.minZoom;
+        var maxZoom = typeof(this.map.options.maxZoom) == "undefined" ? this.map.getNumZoomLevels() : this.map.options.maxZoom;
+
         if (!this.map.fractionalZoom) {
             deltaZ =  Math.round(deltaZ);
         }
-        var currentZoom = this.map.getZoom(),
-            newZoom = currentZoom + deltaZ;
-        newZoom = Math.max(newZoom, 0);
-        newZoom = Math.min(newZoom, this.map.getNumZoomLevels());
-        if (newZoom === currentZoom) {
-            return;
+        var currentZoom = this.map.getZoom();
+        var newZoom = currentZoom + deltaZ;
+        if(newZoom <= maxZoom && newZoom >= minZoom) {
+            this.map.zoomTo(newZoom, evt.xy);
         }
-        this.map.zoomTo(newZoom, evt.xy);
     },
 
     /** 

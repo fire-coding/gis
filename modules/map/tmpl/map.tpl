@@ -18,9 +18,18 @@
 <script type="text/javascript" src="/modules/map/js/mapeventshandler.js"></script>
 <script type="text/javascript" src="/modules/map/js/map.js"></script>
 
-<div class="menu module">
-  <div class="module-title gradient">Адміністративний пошук</div>
+<div class="module map-module">
+  <div class="module-title gradient">{$title}</div>
   <div class="module-wrapper">
     <div style="width:100%; height:600px;" id="op-map"></div>
+
+    <div id="map_change_ctrl" style="display: none;">
+      <ul>
+        <li><a href="#" onclick="appMap.MapControlPanel.selectMapType('map'); return false;">Карта</a></li>
+        <li><a href="#" onclick="appMap.MapControlPanel.selectMapType('kosmo'); return false;">Космознімок</a></li>
+        <li><a href="#" onclick="appMap.MapControlPanel.selectMapType('topo'); return false;">Топокарта</a></li>
+        <li><a href="#" onclick="appMap.MapControlPanel.selectMapType('vector-topo'); return false;">Векторна топокарта</a></li>
+      </ul>
+    </div>
   </div>
 </div>

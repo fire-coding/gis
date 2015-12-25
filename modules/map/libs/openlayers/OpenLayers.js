@@ -402,6 +402,8 @@
                 "OpenLayers/Control/ZoomPanel.js",
                 "OpenLayers/Control/EditingToolbar.js",
                 "OpenLayers/Control/Geolocate.js",
+                "OpenLayers/Control/Liner.js",
+
                 "OpenLayers/Symbolizer.js",
                 "OpenLayers/Symbolizer/Point.js",
                 "OpenLayers/Symbolizer/Line.js",

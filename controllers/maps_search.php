@@ -22,6 +22,7 @@ Class Controller_Maps_Search extends Controller_Base {
     $smarty = $this->registry->get("smarty");
     $smarty->assign("regions", $regions);
     $smarty->assign("page", "maps_search");
+    $smarty->assign("title", "Адміністративний пошук");
 
     $this->display();
   }

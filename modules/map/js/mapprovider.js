@@ -5,7 +5,7 @@ var MapProvider = {
 
   MAX_EXTEND: new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34),
 
-  BOUNDS_UKRAINE: new OpenLayers.Bounds(2572593.432232552, 5761139.945214054, 4203423.97235401, 6865481.656980445),
+  BOUNDS_UKRAINE: new OpenLayers.Bounds(3012305.420865983, 6182047.999176792, 3826050.8985648127, 6883730.558321303),
 
   scanexProvider: function(bounds) {
     var res = appMap.MapInstance.getResolution();
